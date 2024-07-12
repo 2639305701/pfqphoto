@@ -17,12 +17,6 @@
 
 <body>
 
-    <div class="background-video-container">
-        <audio class="background-audio" autoplay loop>
-            <source src="加木 - 主 动.mp3" type="audio/mp3">
-        </audio>
-      </div>
-
     <div class="shell" id="shell">
         <div class="header">
             <h2 class="title">pfq</h2>
@@ -143,6 +137,26 @@
     </div>
 
 
+    <audio id="myAudio" autoplay>
+        <source src="https://api.vvhan.com/api/wyMusic/热歌榜" type="audio/mpeg">
+    </audio>
+    <script>
+        var audio = document.getElementById("myAudio");
+        audio.addEventListener("ended", function() {
+          playNextSong();
+        });
+      
+        function playNextSong() {
+          // 这里写下一首歌曲的逻辑
+          // 例如，你可以使用API获取下一首歌曲的URL并将其设置为音乐源
+          var nextSongUrl = "https://api.vvhan.com/api/wyMusic/热歌榜";
+          audio.src = nextSongUrl;
+          audio.play();
+        }
+      
+        audio.play();
+    </script>
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script>
 
